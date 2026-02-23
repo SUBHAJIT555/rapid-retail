@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { SmDot } from '@/svg';
 
 const ProductDetailsBreadcrumb = ({category,title}) => {
@@ -12,8 +13,8 @@ const ProductDetailsBreadcrumb = ({category,title}) => {
                    <span className="breadcrumb-icon">
                       <SmDot/>{" "}
                    </span>
-                   <span><a href="#">Home</a></span>
-                   <span><a href="#">{category}</a></span>
+                   <span><Link href="/">Home</Link></span>
+                   <span><Link href="/shop">{category}</Link></span>
                    <span>{title}</span>
                 </div>
              </div>

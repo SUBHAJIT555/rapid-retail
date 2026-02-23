@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import bg from '@assets/img/breadcrumb/breadcrumb-bg-1.jpg';
 
 const BlogBreadcrumb = () => {
@@ -14,7 +15,7 @@ const BlogBreadcrumb = () => {
               <h3 className="breadcrumb__title">Our Blog</h3>
               <div className="breadcrumb__list">
                 <span>
-                  <a href="#">Home</a>
+                  <Link href="/">Home</Link>
                 </span>
                 <span>Blog</span>
               </div>

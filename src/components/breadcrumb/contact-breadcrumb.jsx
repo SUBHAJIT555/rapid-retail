@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const ContactBreadcrumb = () => {
   return (
@@ -10,7 +11,7 @@ const ContactBreadcrumb = () => {
               <h3 className="breadcrumb__title">Keep In Touch with Us</h3>
               <div className="breadcrumb__list">
                 <span>
-                  <a href="#">Home</a>
+                  <Link href="/">Home</Link>
                 </span>
                 <span>Contact</span>
               </div>

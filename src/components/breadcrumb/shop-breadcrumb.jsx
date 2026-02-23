@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const ShopBreadcrumb = ({title,subtitle}) => {
   return (
@@ -10,7 +11,7 @@ const ShopBreadcrumb = ({title,subtitle}) => {
               <div className="breadcrumb__content p-relative z-index-1">
                 <h3 className="breadcrumb__title">{title}</h3>
                 <div className="breadcrumb__list">
-                  <span><a href="#">Home</a></span>
+                  <span><Link href="/">Home</Link></span>
                   <span>{subtitle}</span>
                 </div>
               </div>
