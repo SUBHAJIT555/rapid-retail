@@ -1,6 +1,6 @@
-import React from 'react';
-import SEO from '@/components/seo';
-import Wrapper from '@/layout/wrapper';
+import React from "react";
+import SEO from "@/components/seo";
+import Wrapper from "@/layout/wrapper";
 import ElectronicCategory from "@/components/categories/electronic-category";
 import HomeHeroSlider from "@/components/hero-banner/home-hero-slider";
 import FeatureArea from "@/components/features/feature-area";
@@ -13,27 +13,27 @@ import ProductSmArea from "@/components/products/electronics/product-sm-area";
 import NewArrivals from "@/components/products/electronics/new-arrivals";
 import CtaArea from "@/components/cta/cta-area";
 import Footer from "@/layout/footers/footer";
-import HeaderTwo from '@/layout/headers/header-2';
+import HeaderTwo from "@/layout/headers/header-2";
 
 const HomeFour = () => {
   return (
     <Wrapper>
-      <SEO pageTitle="Home Four" />
+      <SEO pageTitle="Home" description={seoDescriptions.home} />
 
-      <HeaderTwo/>
-      <HomeHeroSlider/>
-      <ElectronicCategory/>
-      <FeatureArea/>
-      <ProductArea/>
-      <BannerArea/>
-      <OfferProducts/>
-      <ProductGadgetArea/>
-      <ProductBanner/>
-       <NewArrivals/>
-      <ProductSmArea/>
+      <HeaderTwo />
+      <HomeHeroSlider />
+      <ElectronicCategory />
+      <FeatureArea />
+      <ProductArea />
+      <BannerArea />
+      <OfferProducts />
+      <ProductGadgetArea />
+      <ProductBanner />
+      <NewArrivals />
+      <ProductSmArea />
       {/* <InstagramArea/> */}
-      <CtaArea/>
-      <Footer/>
+      <CtaArea />
+      <Footer />
     </Wrapper>
   );
 };

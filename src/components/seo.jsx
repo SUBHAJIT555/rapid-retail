@@ -5,7 +5,9 @@ const SEO = ({ pageTitle, description }) => (
   <>
     <Head>
       <title>
-        {pageTitle ? `${pageTitle} - ${siteInfo.companyName}` : `${siteInfo.companyName} | ${siteInfo.domain}`}
+        {pageTitle
+          ? `${pageTitle} - ${siteInfo.companyName}`
+          : `${siteInfo.companyName} | ${siteInfo.domain}`}
       </title>
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta name="description" content={description || siteInfo.tagline} />
