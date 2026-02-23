@@ -24,12 +24,17 @@ export const cartSlice = createSlice({
       } else {
         state.cart_products.map((item) => {
           if (item._id === payload._id) {
-            if (item.quantity >= item.orderQuantity + state.orderQuantity) {
+            // If product has no stock limit (quantity), allow unlimited; otherwise enforce stock
+            const hasStockLimit = typeof item.quantity === "number";
+            const requestedTotal = item.orderQuantity + (state.orderQuantity !== 1 ? state.orderQuantity : 1);
+            const canIncrease = !hasStockLimit || item.quantity >= requestedTotal;
+
+            if (canIncrease) {
               item.orderQuantity =
                 state.orderQuantity !== 1
                   ? state.orderQuantity + item.orderQuantity
                   : item.orderQuantity + 1;
-              notifySuccess(`${state.orderQuantity} ${item.title} added to cart`);
+              notifySuccess(`${state.orderQuantity !== 1 ? state.orderQuantity : 1} ${item.title} added to cart`);
             } else {
               notifyError("No more quantity available for this product!");
               state.orderQuantity = 1;

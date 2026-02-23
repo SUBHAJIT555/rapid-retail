@@ -1,6 +1,7 @@
 import React from "react";
 // internal
 import SEO from "@/components/seo";
+import { seoDescriptions } from "@/data/seo-descriptions";
 import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/headers/header-2";
 import Footer from "@/layout/footers/footer";

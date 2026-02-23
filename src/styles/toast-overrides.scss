@@ -1,0 +1,79 @@
+// Override react-toastify styles for Rapid Retail
+// Import this after react-toastify.css so these rules take precedence
+
+.rapid-retail-toast {
+  --toastify-toast-width: 360px;
+  --toastify-toast-top: 1.25rem;
+  --toastify-toast-right: 1.25rem;
+  --toastify-color-success: #31B757;
+  --toastify-color-error: #FD4B6B;
+  --toastify-color-light: #ffffff;
+  --toastify-text-color-light: #021D35;
+  --toastify-color-progress-success: #31B757;
+  --toastify-color-progress-error: #FD4B6B;
+  padding: 0;
+}
+
+.rapid-retail-toast .Toastify__toast-container {
+  width: var(--toastify-toast-width);
+}
+
+.rapid-retail-toast .Toastify__toast {
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(1, 15, 28, 0.12);
+  border: 1px solid rgba(1, 15, 28, 0.06);
+  padding: 14px 16px;
+  min-height: 56px;
+}
+
+.rapid-retail-toast .Toastify__toast--success {
+  background: var(--toastify-color-light);
+  color: var(--toastify-text-color-light);
+}
+
+.rapid-retail-toast .Toastify__toast--error {
+  background: var(--toastify-color-light);
+  color: var(--toastify-text-color-light);
+}
+
+.rapid-retail-toast .Toastify__toast-icon {
+  width: 28px;
+  margin-inline-end: 12px;
+}
+
+.rapid-retail-toast .Toastify__toast--success .Toastify__toast-icon {
+  color: var(--toastify-color-success);
+}
+
+.rapid-retail-toast .Toastify__toast--error .Toastify__toast-icon {
+  color: var(--toastify-color-error);
+}
+
+.rapid-retail-toast-body {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 0;
+}
+
+.rapid-retail-toast .Toastify__close-button {
+  color: #CAD4DB;
+  opacity: 1;
+  align-self: center;
+}
+
+.rapid-retail-toast .Toastify__close-button:hover {
+  color: #021D35;
+}
+
+/* Progress bar - slim and rounded */
+.rapid-retail-toast .Toastify__progress-bar {
+  height: 3px;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Remove any default pointer/arrow from library */
+.rapid-retail-toast .Toastify__toast::before,
+.rapid-retail-toast .Toastify__toast::after {
+  display: none !important;
+}

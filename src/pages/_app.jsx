@@ -6,6 +6,7 @@ import ReactModal from "react-modal";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/index.scss';
 import 'react-toastify/dist/ReactToastify.css';
+import '../styles/toast-overrides.scss';
 // import { GoogleOAuthProvider } from "@react-oauth/google";
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");

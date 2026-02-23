@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { useRouter } from "next/router";
 import SEO from "@/components/seo";
+import { seoDescriptions } from "@/data/seo-descriptions";
 import Wrapper from "@/layout/wrapper";
 import HeaderTwo from "@/layout/headers/header-2";
 import ShopBreadcrumb from "@/components/breadcrumb/shop-breadcrumb";

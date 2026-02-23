@@ -1,4 +1,5 @@
 import SEO from "@/components/seo";
+import { seoDescriptions } from "@/data/seo-descriptions";
 import Wrapper from "@/layout/wrapper";
 import HeaderFour from "@/layout/headers/header-4";
 import JewelryBanner from "@/components/banner/jewelry-banner";

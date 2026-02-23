@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "@/components/seo";
+import { seoDescriptions } from "@/data/seo-descriptions";
 import HeaderTwo from "@/layout/headers/header-2";
 import Wrapper from "@/layout/wrapper";
 import FashionBanner from "@/components/banner/fashion-banner";
