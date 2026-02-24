@@ -123,13 +123,13 @@ const FooterTwo = () => {
                             </div>
                           </form>
                         </div>
-                        <div className="tp-footer-social-4 tp-footer-social">
+                        {/* <div className="tp-footer-social-4 tp-footer-social">
                           <h4 className="tp-footer-social-title-4">Follow Us On</h4>
                           {social_data.map(s => <a href={s.link} key={s.id} target="_blank">
                             <i className={s.icon}></i>
                           </a>
                           )}
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
