@@ -9,7 +9,7 @@ import { add_to_wishlist } from "@/redux/features/wishlist-slice";
 import { notifyError } from "@/utils/toast";
 
 const ProductSliderItem = ({ product }) => {
-  const { _id, title, price, img,status } = product || {};
+  const { _id, title, price, img, status } = product || {};
   const { cart_products } = useSelector((state) => state.cart);
   const { wishlist } = useSelector((state) => state.wishlist);
   const isAddedToCart = cart_products.some((prd) => prd._id === _id);
@@ -18,10 +18,9 @@ const ProductSliderItem = ({ product }) => {
 
   // handle add product
   const handleAddProduct = (prd) => {
-    if (prd.status === 'out-of-stock') {
-      notifyError(`This product out-of-stock`)
-    }
-    else {
+    if (prd.status === "out-of-stock") {
+      notifyError(`This product out-of-stock`);
+    } else {
       dispatch(add_cart_product(prd));
     }
   };
@@ -36,29 +35,21 @@ const ProductSliderItem = ({ product }) => {
         style={{
           backgroundImage: `url(${img})`,
           backgroundColor: "#FFFFFF",
-          backgroundPosition: "0px -80px",
+          backgroundPosition: "top center",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
         }}
       ></div>
       <div className="tp-product-action-3 tp-product-action-4 tp-product-action-blackStyle tp-product-action-brownStyle">
         <div className="tp-product-action-item-3 d-flex flex-column">
-          {isAddedToCart ? (
-            <Link
-              href="/cart"
-              className={`tp-product-action-btn-3 ${isAddedToCart ? 'active' : ''} tp-product-add-cart-btn`}
-            >
-              <Cart />
-              <span className="tp-product-tooltip">View Cart</span>
-            </Link>
-          ) : (
-            <button
-              type="button"
-              onClick={() => handleAddProduct(product)}
-              className={`tp-product-action-btn-3 ${isAddedToCart ? 'active' : ''} tp-product-add-cart-btn`}
-            >
-              <Cart />
-              <span className="tp-product-tooltip">Add to Cart</span>
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => handleAddProduct(product)}
+            className={`tp-product-action-btn-3 ${isAddedToCart ? "active" : ""} tp-product-add-cart-btn`}
+          >
+            <Cart />
+            <span className="tp-product-tooltip">Add to Cart</span>
+          </button>
           <button
             type="button"
             className="tp-product-action-btn-3 tp-product-quick-view-btn"
@@ -70,7 +61,7 @@ const ProductSliderItem = ({ product }) => {
           <button
             type="button"
             onClick={() => handleWishlistProduct(product)}
-            className={`tp-product-action-btn-3 ${isAddedToWishlist ? 'active' : ''} tp-product-add-to-wishlist-btn`}
+            className={`tp-product-action-btn-3 ${isAddedToWishlist ? "active" : ""} tp-product-add-to-wishlist-btn`}
           >
             <Wishlist />
             <span className="tp-product-tooltip">Add To Wishlist</span>
@@ -79,22 +70,30 @@ const ProductSliderItem = ({ product }) => {
       </div>
       <div className="tp-category-content-4">
         <h3 className="tp-category-title-4">
-          <a onClick={() => dispatch(handleProductModal(product))} style={{ cursor: 'pointer' }}>{title}</a>
+          <a
+            onClick={() => dispatch(handleProductModal(product))}
+            style={{ cursor: "pointer" }}
+          >
+            {title}
+          </a>
         </h3>
-        <div className="tp-category-price-wrapper-4">
+        {/* <div className="tp-category-price-wrapper-4">
           <span className="tp-category-price-4">₹{price.toFixed(2)}</span>
           <div className="tp-category-add-to-cart">
             {isAddedToCart ? (
               <Link href="/cart" className="tp-category-add-to-cart-4">
-                <AddCart />{" "}View Cart
+                <AddCart /> View Cart
               </Link>
             ) : (
-              <button onClick={() => handleAddProduct(product)} className="tp-category-add-to-cart-4 border px-4 py-1 rounded-pill bg-primary text-white ">
-                <AddCart />{" "}Add to Cart
+              <button
+                onClick={() => handleAddProduct(product)}
+                className="tp-category-add-to-cart-4 border px-4 py-1 rounded-pill bg-primary text-white "
+              >
+                <AddCart /> Add to Cart
               </button>
             )}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

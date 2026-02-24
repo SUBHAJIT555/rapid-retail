@@ -38,7 +38,7 @@ const SearchBar = ({ isSearchOpen, setIsSearchOpen }) => {
     setIsSearchOpen(false);
   };
 
-  const categories = ["electronics", "fashion", "beauty", "jewelry"];
+  const categories = ["mobile accessories", "smart gadgets", "computer accesseroies", "books", "stationery", "men's wear", "women's wear", "kids's wear", "fashion accessories"];
 
   return (
     <>

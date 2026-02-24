@@ -7,7 +7,6 @@
 .#{$theme-prifix}-header{
     &-sticky{
         &.header-sticky{
-            
             position: fixed !important;
             left: 0;
             margin: auto;
@@ -16,8 +15,10 @@
             z-index: 99;
             -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
             animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
-            box-shadow: 0px 2px 6px rgba(1, 15, 28, 0.16);
-            background: var(--tp-common-white);
+            box-shadow: 0 1px 3px rgba(1, 15, 28, 0.08);
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(10px);
         }
         &-area{
             position: fixed;
@@ -28,9 +29,11 @@
             box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
             z-index: 99;
             
-            -webkit-box-shadow: 0px 4px 10px rgba(3, 4, 28, 0.1);
-            box-shadow: 0px 4px 10px rgba(3, 4, 28, 0.1);
-            background: var(--tp-common-white);
+            -webkit-box-shadow: 0 1px 3px rgba(3, 4, 28, 0.08);
+            box-shadow: 0 1px 3px rgba(3, 4, 28, 0.08);
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
             visibility: hidden;
             opacity: 0;
 

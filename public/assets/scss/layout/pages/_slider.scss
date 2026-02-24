@@ -837,8 +837,8 @@
         bottom: 10%;
         left: 18.3%;
         z-index: 1;
-        width: 150px;
-        height: 180px;
+        width: 200px;
+        min-height: 180px;
         &-item{
             margin: 6px 0;
             opacity: .5;
@@ -862,15 +862,21 @@
                 font-size: 20px;
                 margin-right: 17px;
                 display: inline-block;
+                flex-shrink: 0;
             }
+        }
+        &-content{
+            min-width: 0;
+            overflow: visible;
         }
         &-title{
             font-weight: 500;
             font-size: 20px;
             line-height: 1.10;
             color: #FFFFFF;
-           
             margin-bottom: 0;
+            white-space: normal;
+            word-wrap: break-word;
         }
     }
 }

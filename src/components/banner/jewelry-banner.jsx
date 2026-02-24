@@ -15,12 +15,19 @@ import { ArrowNextTwo, ArrowPrevTwo } from "@/svg";
 import Link from "next/link";
 import { siteInfo } from "@/data/contact-info";
 
-// slider data – uses siteInfo from contact-info.js
+// slider data – 10 slides matching the 10 categories; reuses the 4 images in cycle
+const sliderImages = [slider_img_1, slider_img_2, slider_img_3, slider_img_4];
 const getSliderData = () => [
-  { subtitle: siteInfo.companyName, title: "Your One-Stop Shop", img: slider_img_1 },
-  { subtitle: siteInfo.domain, title: "Tech & Smart Gadgets", img: slider_img_2 },
-  { subtitle: siteInfo.companyName, title: "Fashion for Everyone", img: slider_img_3 },
-  { subtitle: siteInfo.domain, title: "Books, Stationery & More", img: slider_img_4 },
+  { subtitle: siteInfo.companyName, title: "Mobile Accessories", img: sliderImages[0] },
+  { subtitle: siteInfo.domain, title: "Smart Gadgets", img: sliderImages[1] },
+  { subtitle: siteInfo.companyName, title: "Computer Accessories", img: sliderImages[2] },
+  { subtitle: siteInfo.domain, title: "Home Electronics", img: sliderImages[3] },
+  { subtitle: siteInfo.companyName, title: "Books", img: sliderImages[0] },
+  { subtitle: siteInfo.domain, title: "Stationery Items", img: sliderImages[1] },
+  { subtitle: siteInfo.companyName, title: "Men's Wear", img: sliderImages[2] },
+  { subtitle: siteInfo.domain, title: "Women's Wear", img: sliderImages[3] },
+  { subtitle: siteInfo.companyName, title: "Kids Wear", img: sliderImages[0] },
+  { subtitle: siteInfo.domain, title: "Fashion Accessories", img: sliderImages[1] },
 ];
 
 // slider nav data – product categories
