@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar } from 'swiper';
 // internal
 import { useGetPopularProductByTypeQuery } from '@/redux/features/productApi';
+import { siteInfo } from '@/data/contact-info';
 import ProductSliderItem from './product-slider-item';
 import ErrorMsg from '@/components/common/error-msg';
 import { HomeTwoPopularPrdLoader } from '@/components/loader';
@@ -81,8 +82,8 @@ const PopularProducts = () => {
           <div className="row">
             <div className="col-xl-12">
               <div className="tp-section-title-wrapper-4 mb-60 text-center">
-                <span className="tp-section-title-pre-4">rapid-retail.com</span>
-                <h3 className="tp-section-title-4">Popular on the Rapid Retail store.</h3>
+                <span className="tp-section-title-pre-4">{siteInfo.domain}</span>
+                <h3 className="tp-section-title-4">Popular on the {siteInfo.companyName} store.</h3>
               </div>
             </div>
           </div>

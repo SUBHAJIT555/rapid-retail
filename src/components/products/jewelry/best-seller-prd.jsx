@@ -2,6 +2,7 @@ import React from 'react';
 import { Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // internal
+import { siteInfo } from '@/data/contact-info';
 import ProductItem from './product-item';
 import ErrorMsg from '@/components/common/error-msg';
 import { useGetProductTypeQuery } from '@/redux/features/productApi';
@@ -75,8 +76,8 @@ const BestSellerPrd = () => {
             <div className="row">
               <div className="col-xl-12">
                   <div className="tp-section-title-wrapper-4 mb-50 text-center">
-                    <span className="tp-section-title-pre-4">rapid-retail.com</span>
-                    <h3 className="tp-section-title-4">Top Sellers on Rapid Retail</h3>
+                    <span className="tp-section-title-pre-4">{siteInfo.domain}</span>
+                    <h3 className="tp-section-title-4">Top Sellers on {siteInfo.companyName}</h3>
                   </div>
               </div>
             </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import about_img from "@assets/img/about/about-1.jpg";
 import about_thumb from "@assets/img/about/about-2.jpg";
 import { ArrowRightLong } from "@/svg";
+import { siteInfo } from "@/data/contact-info";
 
 const JewelryAbout = () => {
   return (
@@ -26,7 +27,7 @@ const JewelryAbout = () => {
               <div className="tp-about-wrapper pl-80 pt-75 pr-60">
                 <div className="tp-section-title-wrapper-4 mb-50">
                   <span className="tp-section-title-pre-4">
-                    rapid-retail.com
+                    {siteInfo.domain}
                   </span>
                   <h3 className="tp-section-title-4 fz-50">
                     Your One-Stop Shop for Tech, Fashion & More
@@ -34,7 +35,7 @@ const JewelryAbout = () => {
                 </div>
                 <div className="tp-about-content pl-120">
                   <p>
-                    At <strong>Rapid Retail</strong>, we bring you a wide range
+                    At <strong>{siteInfo.companyName}</strong>, we bring you a wide range
                     of products in one place. From{" "}
                     <strong>mobile accessories</strong> and{" "}
                     <strong>smart gadgets</strong> to <strong>computer</strong>{" "}

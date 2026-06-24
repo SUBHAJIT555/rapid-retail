@@ -46,7 +46,7 @@ const ReturnPolicyArea = () => {
                       The following items generally cannot be returned unless they are defective or we have made an error:
                     </p>
                     <ul className="tp-terms-list mb-15" style={{ paddingLeft: '20px', fontSize: '16px', lineHeight: '1.8' }}>
-                      <li style={{ marginBottom: '10px' }}>Custom or engraved jewelry</li>
+                      <li style={{ marginBottom: '10px' }}>Personalized or custom-made items</li>
                       <li style={{ marginBottom: '10px' }}>Earrings (for hygiene reasons, unless sealed and unused)</li>
                       <li style={{ marginBottom: '10px' }}>Items marked as final sale at the time of purchase</li>
                       <li style={{ marginBottom: '10px' }}>Gift cards</li>

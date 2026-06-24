@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 // internal
 import { TextShapeLine } from "@/svg";
+import { siteInfo } from "@/data/contact-info";
 import ErrorMsg from "@/components/common/error-msg";
 import { useGetPopularProductByTypeQuery } from "@/redux/features/productApi";
 import { add_cart_product } from "@/redux/features/cartSlice";
@@ -127,11 +128,11 @@ const PopularProducts = () => {
             <div className="col-xl-12">
               <div className="tp-section-title-wrapper-2 text-center mb-50">
                 <span className="tp-section-title-pre-2">
-                  Shop by Popular Products
+                  {siteInfo.domain}
                   <TextShapeLine />
                 </span>
                 <h3 className="tp-section-title-2">
-                  Popular on the Rapid Retail store.
+                  Popular on the {siteInfo.companyName} store.
                 </h3>
               </div>
             </div>

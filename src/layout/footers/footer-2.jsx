@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // internal
-import social_data from '@/data/social-data';
 import contactInfo, { siteInfo } from '@/data/contact-info';
 import { Email, Location } from '@/svg';
-import logo from '@assets/img/logo/logo.svg';
+import logo from '@assets/img/logo/rapid-retail-logo.png';
 import pay from '@assets/img/footer/footer-pay.png';
 import { submitToApi } from '@/lib/submit-api';
 import { notifyError, notifySuccess } from '@/utils/toast';
@@ -40,7 +39,7 @@ const FooterTwo = () => {
                   <div className="tp-footer-widget footer-col-4-1 mb-50">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image src={logo} alt="logo" />
+                        <Image src={logo} alt="Rapid Retail logo" width={160} height={55} />
                       </Link>
                     </div>
                     <div className="tp-footer-widget-content">
@@ -123,13 +122,6 @@ const FooterTwo = () => {
                             </div>
                           </form>
                         </div>
-                        {/* <div className="tp-footer-social-4 tp-footer-social">
-                          <h4 className="tp-footer-social-title-4">Follow Us On</h4>
-                          {social_data.map(s => <a href={s.link} key={s.id} target="_blank">
-                            <i className={s.icon}></i>
-                          </a>
-                          )}
-                        </div> */}
                       </div>
                     </div>
                   </div>

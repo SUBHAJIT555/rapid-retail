@@ -2,119 +2,83 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 // internal
-import slider_img_1 from "@assets/img/slider/4/slider-1.png";
-import slider_img_2 from "@assets/img/slider/4/slider-2.png";
-import slider_img_3 from "@assets/img/slider/4/slider-3.png";
-import slider_img_4 from "@assets/img/slider/4/slider-4.png";
-// nav icon
-import nav_icon_1 from "@assets/img/slider/4/nav/icon-1.png";
-import nav_icon_2 from "@assets/img/slider/4/nav/icon-2.png";
-import nav_icon_3 from "@assets/img/slider/4/nav/icon-3.png";
-import nav_icon_4 from "@assets/img/slider/4/nav/icon-4.png";
 import { ArrowNextTwo, ArrowPrevTwo } from "@/svg";
 import Link from "next/link";
 import { siteInfo } from "@/data/contact-info";
+import categoryData from "@/constatns/categoryData";
 
-// slider data – 10 slides matching the 10 categories; reuses the 4 images in cycle
-const sliderImages = [slider_img_1, slider_img_2, slider_img_3, slider_img_4];
-const getSliderData = () => [
-  { subtitle: siteInfo.companyName, title: "Mobile Accessories", img: sliderImages[0] },
-  { subtitle: siteInfo.domain, title: "Smart Gadgets", img: sliderImages[1] },
-  { subtitle: siteInfo.companyName, title: "Computer Accessories", img: sliderImages[2] },
-  { subtitle: siteInfo.domain, title: "Home Electronics", img: sliderImages[3] },
-  { subtitle: siteInfo.companyName, title: "Books", img: sliderImages[0] },
-  { subtitle: siteInfo.domain, title: "Stationery Items", img: sliderImages[1] },
-  { subtitle: siteInfo.companyName, title: "Men's Wear", img: sliderImages[2] },
-  { subtitle: siteInfo.domain, title: "Women's Wear", img: sliderImages[3] },
-  { subtitle: siteInfo.companyName, title: "Kids Wear", img: sliderImages[0] },
-  { subtitle: siteInfo.domain, title: "Fashion Accessories", img: sliderImages[1] },
-];
-
-// slider nav data – product categories
-const slider_nav_data = [
-  {
-    icon: nav_icon_1,
-    title: (
+const formatNavTitle = (title) => {
+  const titleMap = {
+    "Mobile Accessories": (
       <>
         Mobile <br />
         Accessories
       </>
     ),
-  },
-  {
-    icon: nav_icon_2,
-    title: (
+    "Smart Gadgets": (
       <>
         Smart <br />
         Gadgets
       </>
     ),
-  },
-  {
-    icon: nav_icon_3,
-    title: (
+    "Computer Accessories": (
       <>
         Computer <br />
         Accessories
       </>
     ),
-  },
-  {
-    icon: nav_icon_4,
-    title: (
+    "Home Electronics": (
       <>
         Home <br />
         Electronics
       </>
     ),
-  },
-  { icon: nav_icon_1, title: <>Books</> },
-  {
-    icon: nav_icon_2,
-    title: (
+    Books: <>Books</>,
+    Stationery: (
       <>
         Stationery <br />
         Items
       </>
     ),
-  },
-  {
-    icon: nav_icon_3,
-    title: (
+    "Men's Wear": (
       <>
         Men&apos;s <br />
         Wear
       </>
     ),
-  },
-  {
-    icon: nav_icon_4,
-    title: (
+    "Women's Wear": (
       <>
         Women&apos;s <br />
         Wear
       </>
     ),
-  },
-  {
-    icon: nav_icon_1,
-    title: (
+    "Kids's Wear": (
       <>
         Kids&apos;s <br />
         Wear
       </>
     ),
-  },
-  {
-    icon: nav_icon_2,
-    title: (
+    "Fashion Accessories": (
       <>
         Fashion <br />
         Accessories
       </>
     ),
-  },
-];
+  };
+  return titleMap[title] ?? title;
+};
+
+const getSliderData = () =>
+  categoryData.map((cat, i) => ({
+    subtitle: i % 2 === 0 ? siteInfo.companyName : siteInfo.domain,
+    title: cat.title === "Stationery" ? "Stationery Items" : cat.title,
+    img: cat.img,
+  }));
+
+const slider_nav_data = categoryData.map((cat) => ({
+  icon: cat.img,
+  title: formatNavTitle(cat.title),
+}));
 
 const JewelryBanner = () => {
   const [slider1, setSlider1] = useState(null);
@@ -156,7 +120,14 @@ const JewelryBanner = () => {
               className="tp-slider-item-4 tp-slider-height-4 p-relative khaki-bg d-flex align-items-center"
             >
               <div className="tp-slider-thumb-4">
-                <Image src={item.img} alt="slider img" />
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={600}
+                  height={600}
+                  priority={i === 0}
+                  style={{ objectFit: "contain" }}
+                />
                 <div className="tp-slider-thumb-4-shape">
                   <span className="tp-slider-thumb-4-shape-1"></span>
                   <span className="tp-slider-thumb-4-shape-2"></span>
@@ -216,7 +187,13 @@ const JewelryBanner = () => {
               >
                 <div className="tp-slider-nav-icon">
                   <span>
-                    <Image src={item.icon} alt="icon" />
+                    <Image
+                      src={item.icon}
+                      alt="icon"
+                      width={48}
+                      height={48}
+                      style={{ objectFit: "cover", borderRadius: "4px" }}
+                    />
                   </span>
                 </div>
                 <div className="tp-slider-nav-content">

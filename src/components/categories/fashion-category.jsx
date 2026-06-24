@@ -5,6 +5,7 @@ import ErrorMsg from "../common/error-msg";
 import { ArrowRightLong } from "@/svg";
 import { HomeTwoCateLoader } from "../loader";
 import { useGetProductTypeCategoryQuery } from "@/redux/features/categoryApi";
+import { siteInfo } from "@/data/contact-info";
 
 const FashionCategory = () => {
   const {

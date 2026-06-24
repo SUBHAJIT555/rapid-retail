@@ -50,7 +50,7 @@ const ContactForm = () => {
       <div className="tp-contact-input-wrapper">
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <input {...register("name", { required: `Name is required!` })} name="name" id="name" type="text" placeholder="Shahnewaz Sakil" />
+            <input {...register("name", { required: `Name is required!` })} name="name" id="name" type="text" placeholder="Your name" />
           </div>
           <div className="tp-contact-input-title">
             <label htmlFor="name">Your Name</label>
@@ -59,7 +59,7 @@ const ContactForm = () => {
         </div>
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="shofy@mail.com" />
+            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="you@example.com" />
           </div>
           <div className="tp-contact-input-title">
             <label htmlFor="email">Your Email</label>

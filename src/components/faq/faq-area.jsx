@@ -4,13 +4,13 @@ import contactInfo from '@/data/contact-info';
 const faqData = (email) => [
   {
     id: 1,
-    question: 'How do I request a quote for jewelry?',
+    question: 'How do I request a quote for products?',
     answer: 'Browse our Shop, add the items you are interested in to your cart, and use the "Request Quote" option at checkout. We will review your request and send you a personalized quote by email within 1–2 business days.',
   },
   {
     id: 2,
-    question: 'Do you offer custom or personalized jewelry?',
-    answer: 'Yes. We can work with you on custom designs and personalization such as engraving. Please include your requirements when requesting a quote or contact us directly with your ideas.',
+    question: 'Do you offer bulk or custom orders?',
+    answer: 'Yes. We can help with bulk purchases and custom requirements for many product categories. Please include your requirements when requesting a quote or contact us directly with your needs.',
   },
   {
     id: 3,
